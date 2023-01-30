@@ -131,6 +131,8 @@ public class App
                     collection.findOneAndDelete(findDocuments);
                     break;
                 case "5":
+                    System.out.println("Hasta pronto!");
+                    disconnect(mongoClient);
                     break;
                 default:
                     System.out.println("Opción incorrecta");
@@ -148,7 +150,7 @@ public class App
 //        System.out.println(dbs);
         return db;
     }
-    public void disconnect(MongoClient mongoClient) {
+    public static void disconnect(MongoClient mongoClient) {
         System.out.println( "Cerrando Mongo" );
         mongoClient.close();
     }
